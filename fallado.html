@@ -1,0 +1,236 @@
+
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Agenda Deportiva</title>
+  <meta http-equiv="refresh" content="200"/>
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="expires" content="-1" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
+  <script type="text/javascript" src="//tucanaldeportivo.com/smallscripts.js"></script>
+  <title>Agenda</title> 
+  <link rel="stylesheet" href="//tucanaldeportivo.com/styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>	
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">    
+  <style>
+  body {
+    margin: 0;
+     background: #ececec;
+    font-family: 'arial', sans serif;
+  }
+  .contenedor {
+    background: #c5c2c2;
+    width: 65%;
+    height: 95%;
+    margin: 0 auto;
+    padding: 10px 10px;
+    text-align: auto;
+  }
+  
+  .contenedor img {
+    width: 100%;
+  }
+  
+  @media (max-width:600px)  { 
+    .contenedor {
+      width: 90%;
+    }
+  }
+  
+  .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      padding-top: 15px;
+      height: 0;
+       overflow: hidden;
+  }
+  
+  .video-container iframe {
+      position: absolute;
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 12px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #68C420;
+    color: white;
+  }
+  
+  .topnav .icon {
+    display: none;
+  }
+  
+  .alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.6s;
+    margin-bottom: 15px;
+  }
+  
+  .alert.success {background-color: #04AA6D;}
+  .alert.info {background-color: #2196F3;}
+  .alert.warning {background-color: #F99206;}
+  
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    color: #bababa;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn:hover {
+    color: black;
+  }
+  
+  
+  
+  
+  </style>
+
+  </style>
+
+  </head>
+  
+  <body link='#547484' onload='guardaHorario();dT();' vlink='#547484'>
+   
+  <div class="contenedor">
+      
+ 
+      
+      
+      <div class="topnav" id="myTopnav">
+    <!--<a href="javascript:location.reload()" class="active">Inicio</a>
+    <a href="canales.html"> Deportes </a>
+    <a href="note.html"> Canales </a>-->
+ 
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  <br>
+      
+  <div id="wrapper">
+    <ul class="menu">
+
+
+     
+    </ul>
+    </div>
+
+    <center> <h2> <strong>Atención! </strong> El servidor esta fallando les invito a que nos sigan viendo  en  la aplicacion   <h1>LISTO</h1> <h2>EN PlayStore</h2></h2> <img src="https://lh3.googleusercontent.com/-mc4c_Yw7Mgs/YvvcmAgve4I/AAAAAAAAGP4/in0dI77J8UUa7JCma0W7GX4q06uEMFQywCNcBGAsYHQ/h120/Captura.PNG" width="50%" height="50%"> 
+      <h2> REGRESAMOS PRONTO  GRACIAS.</h2> </center>
+  
+  <!--initiate accordion-->
+  <script type="text/javascript">
+    $(function() {
+    
+     var menu_ul = $('.menu > li > ul'),
+     menu_a = $('.menu > li > a');
+     
+     menu_ul.hide();
+    
+     menu_a.click(function(e) {
+     e.preventDefault();
+     if(!$(this).hasClass('active')) {
+     menu_a.removeClass('active');
+     menu_ul.filter(':visible').slideUp('fast');
+     $(this).addClass('active').next().stop(true,true).slideDown('fast');
+     } else {
+     $(this).removeClass('active');
+     $(this).next().stop(true,true).slideUp('fast');
+     }
+     });
+    
+    });
+  </script>
+  
+  <br>
+  
+  </div>
+  <script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+  </script>
+  <footer>
+
+  
+  <script>
+  var close = document.getElementsByClassName("closebtn");
+  var i;
+  
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function(){
+      var div = this.parentElement;
+      div.style.opacity = "0";
+      setTimeout(function(){ div.style.display = "none"; }, 600);
+    }
+  }
+  </script>
+  
+  
+
+  
+  
+  </footer>
+
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+
+
+
+</body></html>
+
+
+
+
+
+
+
+
