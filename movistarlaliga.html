@@ -1,0 +1,166 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>MOVISTAR LA LIGA HD</title>
+
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="expires" content="-1" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">    
+<style>
+body {
+  margin: 0;
+   background: #ececec;
+  font-family: 'arial', sans serif;
+}
+.contenedor {
+  background: #fafafa;
+  width: 50%;
+  margin: 0 auto;
+  padding: 10px 10px;
+  text-align: justify;
+}
+
+.contenedor img {
+  width: 100%;
+}
+
+@media (max-width:600px)  { 
+  .contenedor {
+    width: 90%;
+  }
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 15px;
+    height: 0;
+     overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #68C420;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.button {
+  background-color: #50ff39; /* Green */
+  border: 3px solid Black;
+ 
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+    font-weight: bold;
+    width: 115px;
+  }
+</style>
+
+</head>
+
+<body>
+  <div class="contenedor">
+    <div class="topnav" id="myTopnav">
+ <a href="index.html" class="active">Inicio</a>
+   <a href="canales.html"> Deportes </a>
+    <a href="note.html"> Canales </a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<center><h2>Movistar la liga en vivo </h2></center>
+
+<br>
+    <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
+<br>
+<br>
+    <div class="video-container">Loading the player...
+ <iframe class="embed-responsive-item" id="MiIframe"" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" src="https://megatelevisionhd.com/embed/repro/?r=aHR0cHM6Ly9ncmVnb3JzYW1zYS5saWZlL2VtYmVkL2VzL21sYWxpZ2EucGhw" scrolling="no" title="Reproductor 1" alt="Reproducir"></iframe>
+ 
+ </div>
+<br>
+<center><input class="button" onclick="mostrarMensaje1()" type="button" value="OP-SD" />
+<input class="button" onclick="mostrarMensaje2()" type="button" value="OP-SD" /> 
+<input class="button" onclick="mostrarMensaje3()" type="button" value="OP-HD" /> 
+</div>
+
+
+
+<script type="text/javascript">
+  function mostrarMensaje1() {
+document.getElementById("MiIframe").src = "https://www.tutele.nl/online.php?id=5967"
+}
+function mostrarMensaje2() {
+document.getElementById("MiIframe").src = "//tucanaldeportivo.com/beinliga.php"
+
+}
+
+function mostrarMensaje3() {
+document.getElementById("MiIframe").src = "https://megatelevisionhd.com/embed/repro/?r=Ly9ncmVnb3JzYW1zYS5saWZlL2p3LnBocD9nZXQ9YUhSMGNITTZMeTlqY25sMGIyNWxjQzVvWlhKdmEzVmhjSEF1WTI5dEwyaDBkSEJ6T2k4dmJXeGhiR2xuWVMxa1lYTm9MVzF2ZG1semRHRnljR3gxY3k1bGJXbHphVzl1Wkc5bU5pNWpiMjB2WkdGemFDOXRiR0ZzYVdkaExtbHpiV3d2YldGdWFXWmxjM1F1YlhCayZrZXk9TWpVMVpqZzNPVEUxTnpFME5HTmxZVGt5TXpsaU0yTTRNMlJtWmpVeE9EST0ma2V5Mj1aV1UzT1RnMFkyTTJPV0V6TVRVeVl6TXhNalU1Wm1GbE1UWmlaamsyWXpNPQ=="
+}
+</script>
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+
+
+</script>
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+
+</body></html>
