@@ -1,0 +1,46 @@
+<html>
+    <head> 
+  <script src="//lcipembjfkmeggpihdpdgnjildgniffl/clappr.min.js"></script>
+  <script src="//lcipembjfkmeggpihdpdgnjildgniffl/level-selector.min.js"></script>
+  <script src="//lcipembjfkmeggpihdpdgnjildgniffl/clappr-pip.min.js"></script>
+  <script src="//lcipembjfkmeggpihdpdgnjildgniffl/dash-shaka-playback.js"></script>
+  <style>
+body{
+    margin: 0%;
+    background-color: black;
+}
+
+  </style>
+</head>
+<body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
+
+
+<div id="oper"></div>
+<div id="vid"></div>
+<script>
+ player = new Clappr.Player({
+ source: "https://h7lya1.2embed.sbs/cdn/Jih7RNQzpjI8/tracks-v1a1/mono.m3u8?token=6dc0ad10b55ab2187393b482698cc0015f74376c-f5b3ad18ba23638d9ff22c8bc019c2d1--",
+ mimeType: "application/x-mpegURL",
+ autoPlay: true, 
+ height: "100%",
+ width: "100%",
+ plugins: {"core": [LevelSelector]}, 
+ parentId: "#vid"});
+</script>
+</script>
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+
+</body></html>
