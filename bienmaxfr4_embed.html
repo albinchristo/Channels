@@ -1,0 +1,81 @@
+
+<html lang="es">
+   <head>
+   <meta name="robots" content="noindex" />
+   <script src="//cdn.jsdelivr.net/npm/@clappr/player@0.4.0/dist/clappr.min.js"></script>
+   <script src="//cdn.jsdelivr.net/npm/mux.js@5.6.7/dist/mux.min.js"></script>
+   <script src='//cdn.jsdelivr.net/npm/level-selector@latest/dist/level-selector.min.js'></script>
+   <script src='//cdn.jsdelivr.net/npm/clappr-chromecast-plugin@latest/dist/clappr-chromecast-plugin.min.js'></script>
+   <script src='//cdn.jsdelivr.net/npm/clappr-pip@latest/dist/clappr-pip.min.js'></script>
+   <script src='//cdn.jsdelivr.net/npm/clappr-playback-rate-plugin@latest/dist/clappr-playback-rate-plugin.min.js'></script>
+   <script src="//cdn.jsdelivr.net/npm/shaka-player@2.5.10/dist/shaka-player.compiled.min.js"></script>
+   <script src="//cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.external.min.js"></script>
+   <script src="//cdn.jsdelivr.net/npm/cdnbye-shaka@latest"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
+   <style> 
+   
+   .player-poster[data-poster] {
+     background-size: cover;
+   }
+   body{
+     margin:0;
+     padding:0;
+   }
+   
+   </style>
+   </head>
+   <div id="player"></div>
+
+   <script>
+   var _0x4ad1 = ["className", "body", "https://google.com", "replace", "setTimeout", "referrer", "", "indexOf", "userAgent", "test", "https://hls-m004.live-lv3.canalplus-cdn.net/live/disk/beinsportsmax4-hd/dash-fhddvr/beinsportsmax4-hd.mpd", "application/dash+xml", "100%", "9DFB77C0", "video/mp4", "833654ac9b68b5c051aabede0482875b", "87b86f948dee0c7b5123f615b67d8454", "pt-BR", "#player", "(3(){(3 a(){8{(3 b(2){7((\'\'+(2/2)).6!==1||2%5===0){(3(){}).9(\'4\')()}c{4}b(++2)})(0)}d(e){g(a,f)}})()})();", "|", "split", "||i|function|debugger|20|length|if|try|constructor|||else|catch||100|setTimeout", "", "\\w+", "\\b", "g", "oncontextmenu"];
+var _0xfe38 = [_0x4ad1[0], _0x4ad1[1], _0x4ad1[2], _0x4ad1[3], _0x4ad1[4], _0x4ad1[5], _0x4ad1[6], _0x4ad1[7], _0x4ad1[8], _0x4ad1[9], _0x4ad1[10], _0x4ad1[11], _0x4ad1[12], _0x4ad1[13], _0x4ad1[14], _0x4ad1[15], _0x4ad1[16], _0x4ad1[17], _0x4ad1[18], _0x4ad1[19], _0x4ad1[20], _0x4ad1[21], _0x4ad1[22], _0x4ad1[23], _0x4ad1[24], _0x4ad1[25], _0x4ad1[26], _0x4ad1[27]];
+  var player = new Clappr.Player({
+        source: _0xfe38[10],
+        mimeType: _0xfe38[11],
+        height: _0xfe38[12],
+        width: _0xfe38[12],
+        plugins: [DashShakaPlayback, LevelSelector, ChromecastPlugin],
+        chromecast: {
+            appId: _0xfe38[13],
+            contentType: _0xfe38[14]
+        },
+        shakaConfiguration: {
+            drm: {
+                clearKeys: {
+                    'c008940105cc43e0ad17234f0e423ad0': _0xfe38[15],
+                    'fd265203178b4c3cb674b327d9e490c1': _0xfe38[16]
+                }
+            },
+            preferredAudioLanguage: _0xfe38[17]
+        },
+        shakaOnBeforeLoad: function (_0x30d1x4) {},
+        parentId: _0xfe38[18]
+    })
+
+eval(function (_0x30d1x5, _0x30d1x6, _0x30d1x7, _0x30d1x8, _0x30d1x9, _0x30d1xa) {
+    _0x30d1x9 = function (_0x30d1x7) {
+        return _0x30d1x7.toString(36)
+    };
+    if (!_0xfe38[23][_0xfe38[3]](/^/, String)) {
+        while (_0x30d1x7--) {
+            _0x30d1xa[_0x30d1x7.toString(_0x30d1x6)] = _0x30d1x8[_0x30d1x7] || _0x30d1x7.toString(_0x30d1x6)
+        };
+        _0x30d1x8 = [function (_0x30d1x9) {
+            return _0x30d1xa[_0x30d1x9]
+        }];
+        _0x30d1x9 = function () {
+            return _0xfe38[24]
+        };
+        _0x30d1x7 = 1
+    };
+    while (_0x30d1x7--) {
+        if (_0x30d1x8[_0x30d1x7]) {
+            _0x30d1x5 = _0x30d1x5[_0xfe38[3]](new RegExp(_0xfe38[25] + _0x30d1x9(_0x30d1x7) + _0xfe38[25], _0xfe38[26]), _0x30d1x8[_0x30d1x7])
+        }
+    };
+    return _0x30d1x5
+}(_0xfe38[19], 17, 17, _0xfe38[22][_0xfe38[21]](_0xfe38[20]), 0, {}));
+document[_0xfe38[27]] = function () {
+    return false
+}
+   </script>
