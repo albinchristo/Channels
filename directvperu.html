@@ -1,0 +1,49 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>body{margin:0;}iframe{width:100%;height:100%;}.bmpui-ui-watermark{display:none;}.bmpui-ui-volumeslider .bmpui-seekbar .bmpui-seekbar-playbackposition-marker{background-color: #1487fa;}.bmpui-ui-seekbar .bmpui-seekbar .bmpui-seekbar-playbackposition, .bmpui-ui-volumeslider .bmpui-seekbar .bmpui-seekbar-playbackposition{background-color: #1487fa;}.bmpui-ui-seekbar .bmpui-seekbar .bmpui-seekbar-playbackposition-marker, .bmpui-ui-volumeslider .bmpui-seekbar .bmpui-seekbar-playbackposition-marker{border-color:#1487fa;background-color:#1487fa;}</style>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="https://bitmovin-a.akamaihd.net/bitmovin-player/stable/7/bitmovinplayer.js"></script>
+
+</head>
+<body>
+<div id="player"></div>
+<script type="text/javascript">
+    var conf = {
+        key: "11d3698c-efdf-42f1-8769-54663995de2b",
+        source: {
+            dash: "https://dtvott-abc.akamaized.net/dash_live_1061/manifest.mpd",
+            drm: {
+                clearkey: [{
+                    key: 'b89827cc970cd78da882ffca3504c774',
+                    kid: '7119069b99015b4eb9ee4300577399e2' //optional
+                }]
+            }
+        }
+    };
+    var player = bitmovin.player("player");
+    player.setup(conf).then(function (value) {
+        console.log("Successfully created bitmovin player instance");
+    }, function (reason) {
+        console.log("Error while creating bitmovin player instance");
+    });
+</script>
+</script>
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+
+</body></html>

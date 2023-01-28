@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<style type="text/css">
+body {
+   margin: 0;
+   padding: 0;
+}
+</style>
+
+<head>
+
+</head>
+<script src='https://ibra.go.zd.fr/siteof/jwplayer.js'></script>
+<script src='https://content.jwplatform.com/libraries/KB5zFt7A.js'></script>
+
+
+
+<script> jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';</script>
+ 
+<body>
+<script type="text/javascript">
+function getParameterByName(name) {
+	name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
+	var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
+	results = regex.exec(location.search);
+	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+
+</script>
+<div id="player"></div>
+<script>
+var playerInstance=jwplayer("player");
+playerInstance.setup( {
+
+	playlist: [ {
+	title : "COLFUT",
+	 description: "EN VIVO",
+		"sources": [ {
+			"default": false,
+             "file": 'https://edge1-zapopan.izzigo.tv/live1/out/u/dash/ESPN-2-HD/dash/default.mpd',
+              "drm": {
+				"widevine": {
+				"url": atob('Ly9ub2RvYXBwcy5jb20vbGljZW5zZTAxL214dXAucGhw')
+				}
+			}
+			, "label": "0", "type": "mpd"
+		}
+		]
+	}
+	], width: "100%",  height: "100%", aspectratio: "16:9", autostart: false, cast: {}
+	, sharing: {}
+}
+);
+</script>
+
+</body></html>
