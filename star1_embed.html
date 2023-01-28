@@ -1,0 +1,58 @@
+<html lang="es">
+<head>
+
+<meta name="robots" content="noindex" />
+<style type="text/css">
+
+body {
+   margin: 0;
+   padding: 0;
+}
+</style>
+</head>
+
+<script type="text/javascript">
+function getParameterByName(name) {
+	name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
+	var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
+	results = regex.exec(location.search);
+	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+
+</script>
+<script src='https://content.jwplatform.com/libraries/KB5zFt7A.js'></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+<script> jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';</script>
+<div id="player"></div>
+<script>
+  var playerInstance = jwplayer("player");
+
+  playerInstance.setup({
+
+      playlist: [{
+          "title": "Mega Deportes | Star+",
+          "description": "https://megadeportes.online",
+          "image": "https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/747E349F79182A406AFFD4899AECFD6CA075898C9DD7CA7FEFB6D65DF52CDC61/scale?width=500&aspectRatio=1.78&format=jpeg",
+          "sources": [
+              {
+                  "default": false,
+                  "type": "dash",
+                  "file": 'https://live-ftc-na-south-2.media.starott.com/gru1/qb01/starplus/event/2022/09/26/Hungra_vs_Italy_20220926_1664211610040/ctr-all-complete.m3u8',
+                  "drm": {
+                      "clearkey": { "keyId": "b6bf1f62caa04d8f97eb7bc84afcc120", "key": "65143c235ab22294be25eec6df1e7d7f" }
+                  },
+                  "label": "0"
+              }
+          ]
+      }],
+      width: "100%",
+      height: "100%",
+      aspectratio: "16:9",
+      autostart: false,
+      cast: {}
+  });
+</script>
+
+</body></html>

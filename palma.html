@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+ 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>bien1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+<style>
+
+@media (max-width:600px)  { 
+    .contenedor {
+      width: 90%;
+    }
+  }
+  
+  .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      padding-top: 15px;
+      height: 0;
+       overflow: hidden;
+  }
+  
+  .video-container iframe {
+      position: absolute;
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
+
+</style>
+
+    <meta name="robots" content="noindex, nofollow">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        setInterval(function(){
+          console.log('test');
+          document.getElementsByTagName('img').src="''"; 
+                  const iframes = document.getElementsByTagName('iframe');
+
+          for (var i = 0; i < iframes.length; i++) {
+              
+               $('img').remove();
+               $("img").css('display', 'none');
+               $('a').attr('href','' );
+               }
+        },1);
+             
+            </script>
+     
+   
+  </head>
+  <body  >
+
+    <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
+<br>
+<br>
+    <div class="video-container">Loading the player...
+      <iframe src="http://sawlive.tv/watch/858996889c888893879983b5d3c6decec2cfc3d2c1.html" width="685" height="455" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen" __idm_id__="4071425"></iframe>
+      </div>
+
+
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
+
+
+
+</body></html>
