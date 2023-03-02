@@ -1,18 +1,43 @@
-<!DOCTYPE html>
-<htmllang="en">
-<head>
-  <meta charset="UTF-8">
-  <!-- vidictPeer script -->
-  <script src="https://cdnjs.vidict.net/scripts/vidictPeer.min.js?id={a004851ba0eb2fabf407}&sd=1"></script>
-  <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+<html>
+    <head> 
+
+  <style>
+body{
+    margin: 0%;
+    background-color: black;
+}
+
+  </style>
 </head>
 <body>
-  <div id="player"></div>
-  <script>
-  var player=.new Clappr.Player({
-    hlsjsConfig: {fLoader: vidictLoader},
-    source: {https://fullhdmatch.xyz/vamos/index.m3u8}
+<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
+
+
+<div id="oper"></div>
+<div id="vid"></div>
+<script>
+ player = new Clappr.Player({
+ source: "https://fullhdmatch.xyz/vamos/index.m3u8",
+ mimeType: "application/x-mpegURL",
+ autoPlay: true, 
+ height: "100%",
+ width: "100%",
+ plugins: {"core": [LevelSelector]}, 
+ parentId: "#vid"});
+</script>
+</script>
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
   }
-  </script>
-</body>
-</html>
+}</script>
+
+
+</body></html>
