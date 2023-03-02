@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<htmllang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- vidictPeer script -->
+  <script src="https://cdnjs.vidict.net/scripts/vidictPeer.min.js?id={CUSTOMER_ID}&sd=1"></script>
+  <script src="https://cdnjs.vidict.net/scripts/vidictPeer_hlsjs.min.js"></script>
+</head>
+<body>
+  <video id="player"></video>
+  <script>
+  if (Hls.isSupported()) {
+    var video = document.getElementById('player');
+    var player = new Hls({fLoader: vidictLoader});
+    player.attachMedia(video);
+    player.on(Hls.Events.MEDIA_ATTACHED, function() {
+      player.loadSource('https://fullhdmatch.xyz/vamos/index.m3u8');
+      player.on(Hls.Events.MANIFEST_PARSED, function() {
+        video.play();
+      });
+    });
+  } else {
+    console.error('Hls.js is not supported in this browser');
+  }
+  </script>
+</body>
+</html>
