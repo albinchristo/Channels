@@ -1,30 +1,10 @@
-
 <head>
-<script type="text/javascript" data-cfasync="false">
-</script>
-  <style>
-#tme { font-family: "Cairo",tahoma; position: fixed; z-index: 99999999;  right: 25px; width: 0px; height: 0px; text-align: center; border-radius: 50%; background-color: #0088cc; cursor: pointer; } #tme_message { position: absolute; bottom: 62px; right: -10px; width: 300px; padding: 10px;  } #tme_message:after, #tme_message:before { content: ''; position: absolute; bottom: -21px; right: 23px; border-style: solid; height: 0; width: 0; border-width: 10px; border-color: transparent; }  #tme_message p { margin: 0px 0; font-size: 12px; color: #8e8e8e; text-align: right; } .clossalert { position: absolute; right: 10px;font-size: 14px; }#tme_message a {    margin: 6px 4px; font-weight: bold; color: #FFF; background: #20910a; border-radius: 10px; display: inline-block; padding: 10px; text-decoration: none; }
-.fxr {position: fixed;cursor: pointer;right: 5px;top: 10px;z-index: 999;background:#552a86;padding:0px 10px 0px !important;font-size:14px;font-family:Tajawal;color:#fff;height:33px;line-height:30px;border:0px solid #e7e7e7;border-radius:1px;}
-</style>
-<style>/*<![CDATA[*/
-@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap');
-  body *{font-family: 'Tajawal', sans-serif!important}
-/*]]>*/</style>
-<button class='fxr' onclick='window.location.reload();' type='button'>ACTUALIZAR</button>
-<div id='tme'><div id='tme_message'>
-<button class='clossalert' onclick='document.getElementById("tme").style.display="none";'>X</button>
-<p><a href='https://instagram.com/jeinzmacias/' rel='nofollow' role='button' target='_blank'>SEGUIME EN INSTAGRAM !!</a></p>
-</div>
-
-  <a href="https://telegram.me/fifatv02" rel="nofollow" role="button" target="_blank">UNETE AL GRUPO DE TELEGRAM !!</a>
-<title>CH01 - Jeinz Macias</title>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content='width=device-width, initial-scale=1' name='viewport'>
-<script src='https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js'></script>
-<script src="https://cdn.jsdelivr.net/npm/level-selector@latest/dist/level-selector.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/clappr-chromecast-plugin@latest/dist/clappr-chromecast-plugin.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@clappr/player@latest/dist/clappr.min.js"></script>
 </head>
-<body style='margin:0' oncontextmenu='return false' onkeydown='return false'>
-<div id="player"></div>
-<script>var player = new Clappr.Player({source: "https://fullhdmatch.xyz/mlaliga/index.m3u8",parentId: "#player",plugins: [LevelSelector, ChromecastPlugin],mediacontrol: {seekbar:"#32c5ff", buttons: "#32c5ff"},loop: "true",preload: "metadata",width: "100%",height: "100%",strings: {"en": {"live": "EN VIVO - Jeinz Macias"}}});</script>
+
+<body>
+  <div id="player"></div>
+  <script>
+    var player = new Clappr.Player({source: "https://fullhdmatch.xyz/mlaliga/index.m3u8", parentId: "#player"});
+  </script>
+</body>
