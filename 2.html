@@ -1,44 +1,52 @@
 
-<html>
-<head>
-<title>DAZN La Liga</title>
-<meta content='width=device-width, initial-scale=1' name='viewport'>
-<meta http-equiv="Content-Language" content="es" />
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-
-</head>
-<body style="padding: 0px; margin:0px;">
-<script src='https://content.jwplatform.com/libraries/KB5zFt7A.js'></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
-<script> jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';</script>
-<div id="player"></div>
-<script>
-var playerInstance = jwplayer("player");
-
-    playerInstance.setup({
-
-        playlist: [{
-          "title": "Reproductor | FullHDMatch",
-          "description": "LIVE",
-            "sources": [
-                {
-                    "default": false,
-                    "type": "dash",
-                    "file": 'https://4g08.short.gy/WPL/sktech/jiocinema_hindi.mpd',
-                    "drm": {
-                        "clearkey": { "keyId": "82f8e2a17dac44c0a18f660479349c59", "key": "1b144f73e6fefe91cd05f850e2b589d0" }
-                    },
-                    "label": "0"
-                }
-            ]
-        }],
-        width: "100%",
-        height: "100%",
-        aspectratio: "16:9",
-        autostart: false,
-        cast: {},
-        sharing: {}
-    });
-</script>
-<div id="histats_counter"></div>
+<html lang="es">
+  <head>
+ <meta name="robots" content="noindex" />
+  <script src="//cdn.jsdelivr.net/npm/@clappr/player@0.4.0/dist/clappr.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/mux.js@5.6.7/dist/mux.min.js"></script>
+  <script src='//cdn.jsdelivr.net/npm/level-selector@latest/dist/level-selector.min.js'></script>
+  <script src='//cdn.jsdelivr.net/npm/clappr-chromecast-plugin@latest/dist/clappr-chromecast-plugin.min.js'></script>
+  <script src='//cdn.jsdelivr.net/npm/clappr-pip@latest/dist/clappr-pip.min.js'></script>
+  <script src='//cdn.jsdelivr.net/npm/clappr-playback-rate-plugin@latest/dist/clappr-playback-rate-plugin.min.js'></script>
+  <script src="//cdn.jsdelivr.net/npm/shaka-player@2.5.10/dist/shaka-player.compiled.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.external.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/cdnbye-shaka@latest"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
+  <style> 
+  
+  .player-poster[data-poster] {
+    background-size: cover;
+  }
+  body{
+    margin:0;
+    padding:0;
+  }
+  
+  </style>
+  </head>
+  <div id="player"></div>
+  <script>
+  var player = new Clappr.Player({
+          source: 'http://linearjitp-playback.astro.com.my/dash-wv/linear/5013/default.mpd',
+          mimeType: 'application/dash+xml',
+          height: '100%',
+          width: '100%',
+          plugins: [LevelSelector, DashShakaPlayback, ChromecastPlugin, ClapprPip.PipButton, ClapprPip.PipPlugin, Clappr.MediaControl],
+          events: {onReady: function() {var plugin = this.getPlugin('click_to_pause'); plugin && plugin.disable();},},
+          chromecast: {
+              appId: '9DFB77C0',
+              contentType: 'video/mp4',
+          },
+          shakaConfiguration: {
+              drm: {
+              clearKeys: {
+                     URL  'https://ck-dash-mpd.astradamy.com/dash-ck/linear/5013'
+                  }
+              },
+              preferredAudioLanguage: 'pt-BR',
+          },
+          shakaOnBeforeLoad: function (shaka_player) {},
+          parentId: '#player'
+      });
+  </script>
