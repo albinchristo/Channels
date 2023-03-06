@@ -1,60 +1,49 @@
 <!DOCTYPE html>
-<html lang="es">
-<style type="text/css">
-body {
-   margin: 0;
-   padding: 0;
-}
-</style>
-
+<html lang="en">
 <head>
-<script type='text/javascript' src='//recordingfilessuperintend.com/19/c2/82/19c282c073dbed4583595244454d9ac6.js'></script>  
+  <title>Bitmovin Player Demo</title>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="text/html; charset=utf-8" />
+
+  <!-- Bitmovin Player -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bitmovin-player@8/bitmovinplayer.js"></script>
+
+  <style>
+    .player-wrapper {
+      width: 90%;
+      margin: 20px auto;
+      box-shadow: 0 0 30px rgba(0,0,0,0.7);
+    }
+  </style>
 </head>
-      
-    
-<script src = "https://ssl.p.jwpcdn.com/player/v/8.0.12/jwplayer.js"></script>
-
- 
 <body>
+<div class="player-wrapper">
+  <div id="player"></div>
+</div>
+
 <script type="text/javascript">
-function getParameterByName(name) {
-	name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
-	var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
-	results = regex.exec(location.search);
-	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-}
+  var conf = {
+    key: 'fcdd0e88-ba89-46b5-a552-ed9f79406fa9',
+    analytics: {
+      key: '65d4f334-35ed-42b5-8d66-75d36ca46f04',
+      title: 'Art of Motion',
+      videoId: 'wizard-Art_of_Motion-1678127637957',
+    },
+  };
 
-var getURL = getParameterByName('get');
+  var source = {
+    title: 'Art of Motion',
+    dash: 'https://av-live-cdn.mncnow.id/live/eds/SPOTV-HD/sa_dash_vmx/SPOTV-HD.mpd',
+		drm: {
+      widevine: {
+        LA_URL: "https://mrpw.ptmnc01.verspective.net/?deviceId=NDIzMDJhZmUtYWRjMi0zNGJkLTkyN2EtYmE1ZDFlZWIwODEz",
+      },
+    },
+  };
 
-</script>
-<div id="player"></div>
-
-<script>
-jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
-var playerInstance=jwplayer("player");
-playerInstance.setup( {
-
-	playlist: [ {
-	title : "COLFUT",
-	 description: "EN VIVO",
-		"sources": [ {
-			"default": false, 
-			"file": 'https://av-live-cdn.mncnow.id/live/eds/SPOTV-HD/sa_dash_vmx/SPOTV-HD.mpd', 
-            "drm": {
-                            "widevine": {
-                           
-					 "url": 'https://mrpw.ptmnc01.verspective.net/?deviceId=NDIzMDJhZmUtYWRjMi0zNGJkLTkyN2EtYmE1ZDFlZWIwODEz'
-				}
-			},
-             "label": "0", "type": "mpd"
-		}
-		]
-	}
-	],
-     width: "100%",  height: "100%", aspectratio: "16:9", autostart: false, cast: {}
-	, sharing: {}
-}
-);
+  var player = new bitmovin.player.Player(document.getElementById('player'), conf);
+  player.load(source);
 </script>
 
-</body></html>
+</body>
+</html>
