@@ -1,53 +1,195 @@
 
-<html lang="es">
-<head>
-<meta name="robots" content="noindex" />
-<script src="//cdn.jsdelivr.net/npm/@clappr/player@0.4.0/dist/clappr.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/mux.js@5.6.7/dist/mux.min.js"></script>
-<script src='//cdn.jsdelivr.net/npm/level-selector@latest/dist/level-selector.min.js'></script>
-<script src='//cdn.jsdelivr.net/npm/clappr-chromecast-plugin@latest/dist/clappr-chromecast-plugin.min.js'></script>
-<script src='//cdn.jsdelivr.net/npm/clappr-pip@latest/dist/clappr-pip.min.js'></script>
-<script src='//cdn.jsdelivr.net/npm/clappr-playback-rate-plugin@latest/dist/clappr-playback-rate-plugin.min.js'></script>
-<script src="//cdn.jsdelivr.net/npm/shaka-player@2.5.10/dist/shaka-player.compiled.min.js"></script>
-<script src="//cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.external.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/cdnbye-shaka@latest"></script>
+    
+<html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>TNT SPORTS 2</title>
+    
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
-<style> 
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <style>
+    body {
+      margin: 0;
+       background: #ececec;
+      font-family: 'arial', sans serif;
+    }
+    .contenedor {
+      background: #fafafa;
+      width: 50%;
+      margin: 0 auto;
+      padding: 10px 10px;
+      text-align: justify;
+    }
+    
+    .contenedor img {
+      width: 100%;
+    }
+    
+    @media (max-width:600px)  { 
+      .contenedor {
+        width: 90%;
+      }
+    }
+    
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 15px;
+        height: 0;
+         overflow: hidden;
+    }
+    
+    .video-container iframe {
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+    
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 12px;
+    }
+    
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    
+    .topnav a.active {
+      background-color: #68C420;
+      color: white;
+    }
+    
+    .topnav .icon {
+      display: none;
+    }
+                .button {
+  background-color: #50ff39; /* Green */
+  border: 3px solid Black;
+ 
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+    font-weight: bold;
+    width: 115px;
+  }
+  
+    </style>
+     <script>
 
-.player-poster[data-poster] {
-  background-size: cover;
-}
-body{
-  margin:0;
-  padding:0;
-}
+      window.onload = function(){
+          // your code here
+       
+    
+    // Define the string
+    var string = 'https://www.torrentoficial.com/web/dash.php?url=aHR0cHM6Ly9jZG4ubGl2ZS52aWRnby5jb20vQ29udGVudC9EQVNIX1dWL0xpdmUvY2hhbm5lbCg3MTkxNC1FU1BOREhEKS9tYW5pZmVzdC5tcGQ=&k1=MmQ4NDZmMTNjNWJkNDNmM2E0NTZkOWU5NTg0NDdmMTc=&k2=NDdlNTllMGNjYjI4YjBmZmE3Y2U4MzBmZDI1MTk1Mzk=';
+    
+    // Encode the String
+    var encodedString = btoa(string);
+    console.log(encodedString); // Outputs: "SGVsbG8gV29ybGQh"
+    
+    
+    
+    
+    var source = "https://barhomusdza.github.io/uji/repro.html?r="+encodedString;
+    
+    
+      var newFrameName = "hello";
+      const iframe = document.getElementById("iframe");
+      $('iframe').attr('src',source ).reload;
+    
+    
+    };
+    
+    </script>
+    </head>
+    
+    <body>
+      <div class="contenedor">
+        <div class="topnav" id="myTopnav">
+ <a href="index.html" class="active">Inicio</a>
+   <a href="canales.html"> Deportes </a>
+    <a href="note.html"> Canales </a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <center><h2>ESPN DEPORTES en vivo </h2></center>
+    
+    <br>
+        <input class="button" onclick="toggleFullscreen()" type="button" value="Fullscreen TV" />
+<br>
+<br>
+    <div class="video-container">    Loading the player...
+      <iframe id="iframe" class="embed-responsive-item" allow="encrypted-media" frameborder="0" height="100%" width="100%" allowfullscreen="" scrolling="no" allowtransparency="" src="" name="iframe" ></iframe>
+ 
+     </div>
+        <br>
+        <center><input class="button" onclick="mostrarMensaje1()" type="button" value="OP-SD" />
+                <input class="button" onclick="mostrarMensaje2()" type="button" value="OP-HD" />
+  
+             
+          </center>
+          <br/>
+        
+        <script>
+          function mostrarMensaje1() {
+        document.getElementById("iframe").src = "//www.tutelehd.xyz/online.php?a=18"
+        
+        
+        }
+        function mostrarMensaje2() {
+        document.getElementById("iframe").src = "https://www.torrentoficial.com/web/dash.php?url=aHR0cHM6Ly9jZG4ubGl2ZS52aWRnby5jb20vQ29udGVudC9EQVNIX1dWL0xpdmUvY2hhbm5lbCg3MTkxNC1FU1BOREhEKS9tYW5pZmVzdC5tcGQ=&k1=MmQ4NDZmMTNjNWJkNDNmM2E0NTZkOWU5NTg0NDdmMTc=&k2=NDdlNTllMGNjYjI4YjBmZmE3Y2U4MzBmZDI1MTk1Mzk="
+        }
+        
+  </script>
+    </div>
+    <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script>
+    <footer>
+    
+    
+    
+    </footer>
 
-</style>
-</head>
-<div id="player"></div>
-<script>
-var player = new Clappr.Player({
-        source: 'https://fullhdmatch.xyz/espndeportesss/index.mpd',
-        mimeType: 'application/dash+xml',
-        height: '100%',
-        width: '100%',
-        plugins: [LevelSelector, DashShakaPlayback, ChromecastPlugin, ClapprPip.PipButton, ClapprPip.PipPlugin, Clappr.MediaControl],
-        events: {onReady: function() {var plugin = this.getPlugin('click_to_pause'); plugin && plugin.disable();},},
-        chromecast: {
-            appId: '9DFB77C0',
-            contentType: 'video/mp4',
-        },
-        shakaConfiguration: {
-            drm: {
-            clearKeys: {
-                    'cbd13b7a883e53e98d5c7f34d0013be8': 'd5bc9e92f214d77520ab7faa1ecad10b'
-                }
-            },
-            preferredAudioLanguage: 'pt-BR',
-        },
-        shakaOnBeforeLoad: function (shaka_player) {},
-        parentId: '#player'
+<script>function toggleFullscreen() {
+  let elem = document.querySelector("iframe");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
     });
-</script>
-    <script id="_waulyi">var _wau = _wau || []; _wau.push(["dynamic", "apemdhzuiz", "lyi", "c4302bffffff", "small"]);</script><script async src="//waust.at/d.js"></script>
+  } else {
+    document.exitFullscreen();
+  }
+}</script>
 
+  
+
+</body></html>
