@@ -34,13 +34,13 @@
   }
   </script>
 <script>
-  let source = "aHR0cHM6Ly9mdWxsaGRtYXRjaC54eXovbWxhbGlnYWEvaW5kZXgubXBk";
+  let source = "aHR0cHM6Ly9mdWxsaGRtYXRjaC54eXovbW9sYWxpZ2FhL2luZGV4Lm1wZA";
   var player = new Clappr.Player({
       source: atob(source),
       parentId: "#player",
-      watermark: "https://i.imgur.com/5xLFkDA.png?1", position: 'bottom-right', 
-                                                   watermarkLink: "https://telegram.me/joinchat/UfaDu9ueYiR-W8Eg",position: "top-right",,
-      position: "top-left",
+      watermark: "https://i.imgur.com/5xLFkDA.png?1",
+      position: "top-right",
+      watermarkLink: "https://telegram.me/joinchat/UfaDu9ueYiR-W8Eg",position: "top-right",
       plugins: [LevelSelector, ClapprPip.PipButton, ClapprPip.PipPlugin, DashShakaPlayback, ChromecastPlugin, ClapprPip.PipButton, ClapprPip.PipPlugin],
       events: {
           onReady: function () {
