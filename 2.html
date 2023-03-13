@@ -1,52 +1,68 @@
 
 
-<html lang="es">
-  <head>
- <meta name="robots" content="noindex" />
-  <script src="//cdn.jsdelivr.net/npm/@clappr/player@0.4.0/dist/clappr.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/mux.js@5.6.7/dist/mux.min.js"></script>
-  <script src='//cdn.jsdelivr.net/npm/level-selector@latest/dist/level-selector.min.js'></script>
-  <script src='//cdn.jsdelivr.net/npm/clappr-chromecast-plugin@latest/dist/clappr-chromecast-plugin.min.js'></script>
-  <script src='//cdn.jsdelivr.net/npm/clappr-pip@latest/dist/clappr-pip.min.js'></script>
-  <script src='//cdn.jsdelivr.net/npm/clappr-playback-rate-plugin@latest/dist/clappr-playback-rate-plugin.min.js'></script>
-  <script src="//cdn.jsdelivr.net/npm/shaka-player@2.5.10/dist/shaka-player.compiled.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.external.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/cdnbye-shaka@latest"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
-  <style> 
-  
-  .player-poster[data-poster] {
-    background-size: cover;
+<style>
+  body {
+      background: #000;
+      margin: 0;
+      padding: 0;
   }
-  body{
-    margin:0;
-    padding:0;
+  .container {
+      width: 100%!important;
+      height: 100vh!important;
   }
-  
-  </style>
-  </head>
-  <div id="player"></div>
-  <script>
+  #player {
+      height: 100%!important;
+      width: 100%!important;
+  }
+</style>
+<script src="//cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/level-selector@latest/dist/level-selector.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/clappr-pip@latest/dist/clappr-pip.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/clappr-chromecast-plugin@latest/dist/clappr-chromecast-plugin.min.js'></script>
+<script src='//cdn.jsdelivr.net/npm/clappr-pip@latest/dist/clappr-pip.min.js'></script>
+<script src="//ewwink.github.io/clappr-youtube-plugin/clappr-youtube-plugin.js"></script>
+<div class="container">
+<div id="player"></div>
+</div>
+
+
+
+<script>
+  if (window.location.protocol != "https:") {
+      //location.href =   location.href.replace("http://", "https://");
+  }
+  </script>
+<script>
+  let source = "aHR0cHM6Ly9zdHJlYW13dXMyLWxpdmVjdG9ycHJvZG1lZGlhMTEtdXN3MjIubGljZG4uY29tLzBlY2FlYzQ1LWZjZTAtNGMwMi1iODQ1LTBiZTEzYzFhN2ExZC9MNTY2MWI1YjQ5MTg5MDc2MDAwLWxpdmVtYW5pZmVzdC5pc20vbWFuaWZlc3QoZm9ybWF0PW1wZC10aW1lLWNtYWYp";
   var player = new Clappr.Player({
-          source: 'http://linearjitp-playback.astro.com.my/dash-wv/linear/5013/default.mpd',
-          mimeType: 'application/dash+xml',
-          height: '100%',
-          width: '100%',
-          plugins: [LevelSelector, DashShakaPlayback, ChromecastPlugin, ClapprPip.PipButton, ClapprPip.PipPlugin, Clappr.MediaControl],
-          events: {onReady: function() {var plugin = this.getPlugin('click_to_pause'); plugin && plugin.disable();},},
-          chromecast: {
-              appId: '9DFB77C0',
-              contentType: 'video/mp4',
+      source: atob(source),
+      parentId: "#player",
+      watermark: "https://lh3.googleusercontent.com/-Vq5QZZhF__k/YhdJnxU0DjI/AAAAAAAABYs/qTqrJ8gA-FEqMPRafKKd5eRWNaQUMa4vgCNcBGAsYHQ/s1600/1645693339074937-0.png",
+      position: "top-right",
+      watermarkLink: "https://telegram.me/fifatv02",position: "top-right",
+      plugins: [LevelSelector, ClapprPip.PipButton, ClapprPip.PipPlugin, DashShakaPlayback, ChromecastPlugin, ClapprPip.PipButton, ClapprPip.PipPlugin],
+      events: {
+          onReady: function () {
+              var plugin = this.getPlugin("click_to_pause");
+              plugin && plugin.disable();
           },
-          shakaConfiguration: {
-              drm: {
-              clearKeys: {
-                     URL  'https://ck-dash-mpd.astradamy.com/dash-ck/linear/5013'
-                  }
-              },
-              preferredAudioLanguage: 'pt-BR',
+      },
+      chromecast: {
+          appId: "9DB77C0",
+          contentType: "video/mp4",
+      },
+      gaAccount: "G-Z78KV9CY",
+      gaTrackerName: "MyPlaystance",
+      height: "100%",
+      width: "100%",
+      autoPlay: false,
+      muted: false,
+      shakaConfiguration: {
+          preferredAudioLanguage: "es-MX",
+          drm: {
+              clearKeys: {'d2e15fc39d9052a0bf5edf17498785ea':'543ddd241709882d8cbb162c2c11b964','e2c88c1cec785475ab6b05a1c4d15a78':'06b891b1953211c8286bb312ad05e9e5','4435432010f45dd9967dce3cde18664b':'0d0bf2e2e7799ff26c8bb82b1be67c8a'},
           },
-          shakaOnBeforeLoad: function (shaka_player) {},
-          parentId: '#player'
-      });
+      },
+  });
   </script>
