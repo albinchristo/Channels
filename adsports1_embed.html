@@ -1,54 +1,40 @@
+  <b> <h3 style="background-color:Tomato;;">Link 1 </h3> </b>
+
 <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/cdnbye@latest/dist/clappr-plugin.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js"></script>
 
+<body>
 <div id="player"></div>
+
 <script>
+    
+
     var player = new Clappr.Player(
         {
-            source: "https://pubads.g.doubleclick.net/ssai/event/Syu8F41-R1y_JmQ7x0oNxQ/master.m3u8",
-            parentId: "#player",
-            autoPlay: true,
-  		mute: true,
-		width: '100%',
-		height:'100%',
-            plugins: [LevelSelector],
-            levelSelectorConfig: {
-                title: 'Quality',
-                labels: {
-                    1: 'High', // 240kbps
-                    0: 'Low', // 120kbps
-                }
-              },
-            playback: {
-                hlsjsConfig: {
-                    // Other hlsjsConfig options provided by hls.js
-                    p2pConfig: {
-                        logLevel: 'debug',
-                        live: true,   
-                        getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
-            var total = totalHTTPDownloaded + totalP2PDownloaded;
-            document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
-        },
-         announceLocation: 'hk',        
-        // Other p2pConfig options provided by CDNBye
-                        // set to true in live mode
-                        // Other p2pConfig options provided by CDNBye
-                    }
-                }
-            },
-            mediacontrol: {
-                        seekbar: '#add8e6',
-                        buttons: '#add8e6'
-                    },
-            mimeType: "application/x-mpegURL"
-        });
+             source: 'https://pubads.g.doubleclick.net/ssai/event/Syu8F41-R1y_JmQ7x0oNxQ/master.m3u8',
+             plugins: [CDNByeClapprPlugin],
+             playback: {
+                 playInline: true,
+                 hlsjsConfig: {
+                     maxBufferSize: 0,      
+                     maxBufferLength: 10,   
+                     liveSyncDurationCount: 10,  
+                     p2pConfig: {
+                         logLevel: 'debug',
+                         live: true,
+                         announce: "https://tracker.hdtvcloud.com/v1",
+                              sharePlaylist: true,
+                     }
+                 }
+             },
+             mediacontrol: {buttons: "#33FFC9", seekbar: "#33FFC9"},
+             height: '100%',
+             width: '100%',
+             parentId: "#player",
+             autoPlay: false,
+             mimeType: "application/x-mpegURL"
+         });                                
+      </script>
 
-</script>
-<style>
-         .media-control[data-media-control] .media-control-layer[data-controls] button.media-control-button[data-hd-indicator] {
-         display: block !important;
-         fill: rgb(173, 216, 230) !important;
-         }
-      </style>
