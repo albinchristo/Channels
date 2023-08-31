@@ -1,40 +1,11 @@
-  <b> <h3 style="background-color:Tomato;;">Link 1 </h3> </b>
-
-<script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/cdnbye@latest/dist/clappr-plugin.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js"></script>
-
-<body>
+<script src='https://cdn.jsdelivr.net/gh/NaughtyJoker29/live/tv.js' type='text/javascript'></script>
 <div id="player"></div>
-
 <script>
-    
-
-    var player = new Clappr.Player(
-        {
-             source: 'https://pubads.g.doubleclick.net/ssai/event/Syu8F41-R1y_JmQ7x0oNxQ/master.m3u8',
-             plugins: [CDNByeClapprPlugin],
-             playback: {
-                 playInline: true,
-                 hlsjsConfig: {
-                     maxBufferSize: 0,      
-                     maxBufferLength: 10,   
-                     liveSyncDurationCount: 10,  
-                     p2pConfig: {
-                         logLevel: 'debug',
-                         live: true,
-                         announce: "https://tracker.hdtvcloud.com/v1",
-                              sharePlaylist: true,
-                     }
-                 }
-             },
-             mediacontrol: {buttons: "#33FFC9", seekbar: "#33FFC9"},
-             height: '100%',
-             width: '100%',
-             parentId: "#player",
-             autoPlay: false,
-             mimeType: "application/x-mpegURL"
-         });                                
-      </script>
+var player = new Playerjs({
+   id:"player",
+   file:[
+      {"title":"CH 1","file":"https://pubads.g.doubleclick.net/ssai/event/Syu8F41-R1y_JmQ7x0oNxQ/master.m3u8"},
+   ]
+});
+</script>
 
