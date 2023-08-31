@@ -1,43 +1,54 @@
-<html>
-    <head> 
+<script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cdnbye@latest/dist/hlsjs-p2p-engine.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cdnbye@latest/dist/clappr-plugin.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js"></script>
 
-  <style>
-body{
-    margin: 0%;
-    background-color: black;
-}
-
-  </style>
-</head>
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
-
-
-<div id="oper"></div>
-<div id="vid"></div>
+<div id="player"></div>
 <script>
- player = new Clappr.Player({
- source: "https://pubads.g.doubleclick.net/ssai/event/Syu8F41-R1y_JmQ7x0oNxQ/master.m3u8",
- mimeType: "application/x-mpegURL",
- autoPlay: true, 
- height: "100%",
- width: "100%",
- plugins: {"core": [LevelSelector]}, 
- parentId: "#vid"});
+    var player = new Clappr.Player(
+        {
+            source: "https://pubads.g.doubleclick.net/ssai/event/Syu8F41-R1y_JmQ7x0oNxQ/master.m3u8",
+            parentId: "#player",
+            autoPlay: true,
+  		mute: true,
+		width: '100%',
+		height:'100%',
+            plugins: [LevelSelector],
+            levelSelectorConfig: {
+                title: 'Quality',
+                labels: {
+                    1: 'High', // 240kbps
+                    0: 'Low', // 120kbps
+                }
+              },
+            playback: {
+                hlsjsConfig: {
+                    // Other hlsjsConfig options provided by hls.js
+                    p2pConfig: {
+                        logLevel: 'debug',
+                        live: true,   
+                        getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
+            var total = totalHTTPDownloaded + totalP2PDownloaded;
+            document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
+        },
+         announceLocation: 'hk',        
+        // Other p2pConfig options provided by CDNBye
+                        // set to true in live mode
+                        // Other p2pConfig options provided by CDNBye
+                    }
+                }
+            },
+            mediacontrol: {
+                        seekbar: '#add8e6',
+                        buttons: '#add8e6'
+                    },
+            mimeType: "application/x-mpegURL"
+        });
+
 </script>
-</script>
-<script>function toggleFullscreen() {
-  let elem = document.querySelector("iframe");
-
-  if (!document.fullscreenElement) {
-    elem.requestFullscreen().catch((err) => {
-      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
-    });
-  } else {
-    document.exitFullscreen();
-  }
-}</script>
-
-
-</body></html>
+<style>
+         .media-control[data-media-control] .media-control-layer[data-controls] button.media-control-button[data-hd-indicator] {
+         display: block !important;
+         fill: rgb(173, 216, 230) !important;
+         }
+      </style>
